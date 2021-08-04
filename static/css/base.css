@@ -61,7 +61,7 @@ hr.dashed {
     transition: .3s ease-in-out;
 }
 
-.cool-link:hover::after {
+.cool-link:hover::after, .cool-link.active::after {
     width: 100%;
 }
 
