@@ -41,6 +41,12 @@ def home_page():
     return render_template('home_page.html')
 
 
+@app.route('/interview_question')
+@app.route('/interview_question/')
+def interview_question_page():
+    return render_template('interview_question_page.html')
+
+
 @app.route('/category/<category_url>/')
 @app.route('/category/<category_url>')
 def category_page(category_url):
