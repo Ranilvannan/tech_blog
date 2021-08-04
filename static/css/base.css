@@ -69,3 +69,8 @@ hr.dashed {
     font-size: 36px;
 }
 
+.offcanvas-collapse.open {
+    visibility: visible;
+    transform: translateX(-100%);
+}
+
