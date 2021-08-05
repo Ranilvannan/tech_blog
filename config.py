@@ -6,6 +6,7 @@ class Config(object):
 class ProductionConfig(Config):
     MONGO_URI = "mongodb://localhost:27017/tech_blog"
     MONGO_DATABASE = "tech_blog"
+    BLOG_CODE = "tech_blog"
 
     IMPORT_PATH = "/var/tech_blog"
     CUSTOM_IMAGES_PATH = "/var/tech_blog/images"
