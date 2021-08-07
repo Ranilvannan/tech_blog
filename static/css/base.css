@@ -11,11 +11,6 @@ body {
     background: cornflowerblue;
 }
 
-
-.blog-post{
-    cursor: pointer;
-}
-
 .navbar {
 
     top: 0;
@@ -28,24 +23,6 @@ body {
     box-shadow: 0 8px 6px -6px #999;
 
 }
-
-hr.dashed {
-    border-top: 2px dashed green;
-}
-
-.article{
-	background: white;
-}
-
-.blog-info {
-  background-color: #28a74514;
-  padding: 3px;
-}
-
-.blog-link{
-  color: rgb(4, 160, 241);
-}
-
 
 .cool-link {
     color: #000;
@@ -69,12 +46,26 @@ hr.dashed {
     font-size: 36px;
 }
 
-.offcanvas-collapse.open {
-    visibility: visible;
-    transform: translateX(-100%);
-}
-
 .h100 {
     height: 100%;
 }
+
+.space-110 {
+    height: 110px;
+    display: block;
+}
+
+.space-55 {
+    height: 55px;
+    display: block;
+}
+
+footer{
+    background: #455A64;
+}
+
+p {
+    color: #7f8fa6;
+}
+
 

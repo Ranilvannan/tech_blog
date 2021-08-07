@@ -69,15 +69,6 @@ img {
     text-align: center;
 }
 
-.space-110 {
-    height: 110px;
-    display: block;
-}
-
-.space-55 {
-    height: 55px;
-    display: block;
-}
 
 .card-plain {
     box-shadow: none;
@@ -85,13 +76,6 @@ img {
     border: none;
 }
 
-footer{
-    background: #455A64;
-}
-
-p {
-    color: #7f8fa6;
-}
 
 
 .card.card-background .full-background {
