@@ -163,3 +163,8 @@ def gallery_update():
 
     bi = BlogInsert(path, col, params, file_suffix)
     bi.trigger_import()
+
+
+@app.route('/test')
+def test_page():
+    return render_template('interview_preparation_page.html')

@@ -1,6 +1,9 @@
-
-
 {% extends "base.html" %}
+
+{% block custom_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+{% endblock %}
+
 {% block body %}
 <div class="wrapper">
     <section class="section section-header">
