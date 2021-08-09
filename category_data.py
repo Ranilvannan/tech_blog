@@ -14,5 +14,9 @@ category_data = {
     "diy": {
         "name": "DIY",
         "description": "DIY"
+    },
+    "blog": {
+        "name": "Blog",
+        "description": "Blog"
     }
 }
