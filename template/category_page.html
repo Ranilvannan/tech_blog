@@ -19,11 +19,11 @@
 					<div class="blog-post-status p-2">
 						<div class="text-muted small">
 							<b>Published On</b>
-							<i>{{ article.published_on }}</i>
+							<i class="ms-2">{{ article.published_on }}</i>
 						</div>
 						<div class="text-muted small">
 							<b>Category</b>
-							<a class="blog-info blog-link" href="{{ url_for('category_page', category_url=article.category_url) }}">{{ article.category_name }}</a>
+							<a class="badge badge-tag ms-2" href="{{ url_for('category_page', category_url=article.category_url) }}">{{ article.category_name }}</a>
 						</div>
 					</div>
 				</div>

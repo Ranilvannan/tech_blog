@@ -68,4 +68,11 @@ p {
     color: #7f8fa6;
 }
 
+.badge-tag {
+    font-size: inherit;
+    text-decoration: none;
+    background-color: cornflowerblue;
+}
+
+
 
