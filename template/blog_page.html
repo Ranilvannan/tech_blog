@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}{{article.title}}{% endblock %}
+{% block description %}{{article.preview}}{% endblock %}
+
+{% block body %}
+
+<div class="space-18"></div>
+<div class="container">
+	<div class="row">
+        <div class="col-sm-1"></div>
+		<div class="col-sm-9 article pt-1">
+            <nav aria-label="breadcrumb">
+				<ol class="breadcrumb p-2">
+					<li class="breadcrumb-item"><a href="#">Home</a></li>
+					<li class="breadcrumb-item"><a href="#">Library</a></li>
+					<li class="breadcrumb-item active" aria-current="page">Data</li>
+				</ol>
+			</nav>
+			<div class="story">
+                <div class="story-title p-2">
+                    <h2>{{article.title}}</h2>
+                    <p class="small">
+                        <b class="text-primary pr-2">Published On</b>
+                        <i class="blog-info">{{ article.published_on }}</i>
+                        <strong>|</strong>
+                        <b class="text-primary pr-2">Category</b>
+                        <a class="blog-info blog-link" href="{{ url_for('category_page', category_url=article.category_url) }}">{{ article.category_name }}</a>
+                    </p>
+                </div>
+                {% if article.image_filename %}
+                    <img src="{{ url_for('custom_images', filename=article.image_filename) }}" width="100%">
+                {% endif %}
+                <div class="story-content pt-2">
+                    {% for rec in article.content_ids %}
+			            <p>{{ rec }}</p>
+			        {% endfor %}
+                </div>
+            </div>
+		</div>
+	</div>
+</div>
+{% endblock %}

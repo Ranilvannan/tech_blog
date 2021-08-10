@@ -78,7 +78,7 @@ def category_page(category_url):
 
 @app.route('/category/<category_url>/<blog_url>/')
 @app.route('/category/<category_url>/<blog_url>')
-def interview_preparation_page(category_url, blog_url):
+def blog_page(category_url, blog_url):
     blog = app.config.get("MONGO_BLOG_TABLE")
     blog_col = data_collect(blog)
     article = blog_col.find_one({"url": blog_url})
@@ -86,7 +86,7 @@ def interview_preparation_page(category_url, blog_url):
     if not article:
         abort(404)
 
-    return render_template('interview_preparation_page.html', article=article)
+    return render_template('blog_page.html', article=article)
 
 
 @app.route("/sitemap.xml")

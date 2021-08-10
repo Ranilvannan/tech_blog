@@ -68,6 +68,11 @@ body {
     display: block;
 }
 
+.space-18 {
+    height: 18px;
+    display: block;
+}
+
 footer{
     background: #455A64;
 }
@@ -84,6 +89,18 @@ p {
 
 .foot-link {
     color: #7f8fa6;
+    text-decoration: none !important;
+}
+
+.blog-sp {
+    cursor: pointer;
+}
+
+.blog-sp:hover{
+  background-color: aliceblue;
+}
+
+.breadcrumb-item a {
     text-decoration: none !important;
 }
 

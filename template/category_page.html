@@ -4,12 +4,20 @@
 
 
 {% block body %}
-<div class="container-fluid">
+<div class="space-18"></div>
+<div class="container">
 	<div class="row">
-		<div class="col-sm-2"></div>
-		<div class="col-sm-7 article mb-3">
+		<div class="col-sm-1"></div>
+		<div class="col-sm-10 article mb-3">
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="#">Home</a></li>
+					<li class="breadcrumb-item"><a href="#">Library</a></li>
+					<li class="breadcrumb-item active" aria-current="page">Data</li>
+				</ol>
+			</nav>
 			{% for article in articles %}
-			<div class="row p-3">
+			<article class="row p-3 blog-sp" onclick="location.href='{{ url_for('blog_page', category_url=article.category_url, blog_url=article.url) }}'">
 			  	<div class="col-xs-6 col-md-4">
 					<img src="{{ url_for('static', filename='img/digital_building.jpg') }}" width="100%">
 				</div>
@@ -23,12 +31,13 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</article>
 			{% endfor %}
 			<div class="clearfix my-4">
 				{{ pagination.links }}
 			</div>
 		</div>
+		<div class="col-sm-1"></div>
 	</div>
 </div>
 
