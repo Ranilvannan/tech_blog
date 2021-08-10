@@ -50,6 +50,14 @@ body {
     height: 100%;
 }
 
+.w100 {
+    width: 100%;
+}
+
+.pd60 {
+    padding: 0 60px;
+}
+
 .space-110 {
     height: 110px;
     display: block;
