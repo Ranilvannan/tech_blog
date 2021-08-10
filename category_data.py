@@ -11,10 +11,6 @@ category_data = {
         "name": "Interview Preparation",
         "description": "Interview Preparation"
     },
-    "programming": {
-        "name": "programming",
-        "description": "Programming"
-    },
     "diy": {
         "name": "DIY",
         "description": "DIY"
