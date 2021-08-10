@@ -82,5 +82,9 @@ p {
     background-color: cornflowerblue;
 }
 
+.foot-link {
+    color: #7f8fa6;
+    text-decoration: none !important;
+}
 
 
