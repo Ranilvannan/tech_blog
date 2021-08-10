@@ -29,28 +29,49 @@
 					</svg>
 				</button>
 
+				{% set navigation_bar = [
+					('/', 'home', 'Home'),
+					('/category/tutorial/', 'tutorials', 'Tutorials'),
+					('/category/foss/', 'foss', 'FOSS'),
+					('/category/interview_preparation/', 'interview_preparation', 'Interview Preparation'),
+					('/category/blog/', 'blog', 'Blog'),
+					('/category/diy/', 'diy', 'DIY')
+				] %}
+
+				{% set active_page = active_page %}
+
 				<div class="collapse navbar-collapse" id="bdNavbar">
 					<ul class="navbar-nav flex-row flex-wrap ms-md-auto">
-						<li class="nav-item col-6 col-md-auto">
-							<a class="nav-link px-4 cool-link" href="/">Home</a>
-						</li>
-						<li class="nav-item col-6 col-md-auto">
-							<a class="nav-link px-4 cool-link" aria-current="true" href="/category/tutorial/">Tutorials</a>
-						</li>
-						<li class="nav-item col-6 col-md-auto">
-							<a class="nav-link px-4 cool-link" href="/category/foss/">FOSS</a>
-						</li>
-						<li class="nav-item col-6 col-md-auto">
-							<a class="nav-link px-4 cool-link" href="/category/interview_preparation/">Interview Preparation</a>
-						</li>
-						<li class="nav-item col-6 col-md-auto">
-							<a class="nav-link px-4 cool-link" href="/category/blog/">Blog</a>
-						</li>
-						<li class="nav-item col-6 col-md-auto">
-							<a class="nav-link px-4 cool-link" href="/category/diy/">DIY</a>
-						</li>
+						{% for href, id, caption in navigation_bar %}
+							<li class="nav-item col-6 col-md-auto">
+								<a class="nav-link px-4 cool-link {% if id == active_page %} active {% endif %}" href="{{ href|e }}">{{ caption|e }}</a>
+							</li>
+						{% endfor %}
 					</ul>
 				</div>
+
+<!--				<div class="collapse navbar-collapse" id="bdNavbar">-->
+<!--					<ul class="navbar-nav flex-row flex-wrap ms-md-auto">-->
+<!--						<li class="nav-item col-6 col-md-auto">-->
+<!--							<a class="nav-link px-4 cool-link" href="/">Home</a>-->
+<!--						</li>-->
+<!--						<li class="nav-item col-6 col-md-auto">-->
+<!--							<a class="nav-link px-4 cool-link" aria-current="true" href="/category/tutorial/">Tutorials</a>-->
+<!--						</li>-->
+<!--						<li class="nav-item col-6 col-md-auto">-->
+<!--							<a class="nav-link px-4 cool-link" href="/category/foss/">FOSS</a>-->
+<!--						</li>-->
+<!--						<li class="nav-item col-6 col-md-auto">-->
+<!--							<a class="nav-link px-4 cool-link" href="/category/interview_preparation/">Interview Preparation</a>-->
+<!--						</li>-->
+<!--						<li class="nav-item col-6 col-md-auto">-->
+<!--							<a class="nav-link px-4 cool-link" href="/category/blog/">Blog</a>-->
+<!--						</li>-->
+<!--						<li class="nav-item col-6 col-md-auto">-->
+<!--							<a class="nav-link px-4 cool-link" href="/category/diy/">DIY</a>-->
+<!--						</li>-->
+<!--					</ul>-->
+<!--				</div>-->
 			</nav>
 		</header>
 		<div style="margin-top:81px"></div>

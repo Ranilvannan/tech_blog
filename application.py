@@ -38,7 +38,7 @@ def custom_images(filename):
 
 @app.route('/')
 def home_page():
-    return render_template('home_page.html')
+    return render_template('home_page.html', active_page="home")
 
 
 @app.route('/category/<category_url>/')
@@ -73,6 +73,7 @@ def category_page(category_url):
     return render_template('category_page.html',
                            articles=articles,
                            category=category,
+                           active_page=category_url,
                            pagination=pagination)
 
 
