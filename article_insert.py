@@ -4,8 +4,12 @@ import json
 
 class ArticleInsert:
 
-    def __init__(self, models, path, file_suffix):
-        self.models = models
+    def __init__(self, article, category, sub_category, tag, gallery, path, file_suffix):
+        self.article = article
+        self.category = category
+        self.sub_category = sub_category
+        self.tag = tag
+        self.gallery = gallery
         self.path = path
         self.file_suffix = file_suffix
 
@@ -13,58 +17,138 @@ class ArticleInsert:
         files = self.get_json_files()
 
         for file in files:
-            insert_list, update_list = self.get_json_data(file)
-            self.bulk_insert(insert_list)
-            self.update_blog(update_list)
+            self.get_json_data(file)
+            # if os.path.exists(file):
+            #     os.remove(file)
 
-            if os.path.exists(file):
-                os.remove(file)
+    def update_article(self, rec):
+        table = self.article
+        data_dict = {"article_id": rec["article_id"]}
+        data = {
+            "article_id": rec["article_id"],
+            "date": rec["date"],
+            "published_on": rec["published_on"],
+            "blog_type": rec["blog_type"],
+            "name": rec["name"],
+            "url": rec["url"],
+            "title": rec["title"],
+            "preview": rec["preview"],
+            "content": rec["content"],
+            "previous": rec["previous"],
+            "next": rec["next"],
+            "related_ids": rec["related_ids"],
+        }
+        row = table.find(data_dict).count()
 
-    def update_article(self):
-        pass
+        if row:
+            table.find_one_and_replace(data_dict, data)
+        else:
+            table.insert_one(data)
 
-    def update_category(self):
-        pass
+        return True
 
-    def update_sub_category(self):
-        pass
+    def update_category(self, rec):
+        table = self.category
+        data_dict = {"category_id": rec["category_id"]}
+        data = {
+            "category_id": rec["category_id"],
+            "name": rec["category_name"],
+            "url": rec["category_url"],
+            "code": rec["category_code"],
+            "description": rec["category_description"]
+        }
+        row = table.find(data_dict).count()
 
-    def update_tag(self):
-        pass
+        if row:
+            table.find_one_and_replace(data_dict, data)
+        else:
+            table.insert_one(data)
 
-    def update_gallery(self):
-        coll = self.models.get("gallery", False)
+        return True
 
-        if coll:
-            pass
+    def update_sub_category(self, rec):
+        table = self.sub_category
+        data_dict = {"sub_category_id": rec["sub_category_id"]}
+        data = {
+            "sub_category_id": rec["sub_category_id"],
+            "name": rec["sub_category_name"],
+            "url": rec["sub_category_url"],
+            "code": rec["sub_category_code"],
+            "description": rec["sub_category_description"]
+        }
+        row = table.find(data_dict).count()
 
+        if row:
+            table.find_one_and_replace(data_dict, data)
+        else:
+            table.insert_one(data)
 
-    def bulk_insert(self, recs):
-        if recs:
-            self.col.insert_many(recs)
+        return True
 
-    def update_blog(self, recs):
-        for rec in recs:
-            # data_dict = {"story_id": rec["story_id"]}
-            data_dict = {self.params: rec[self.params]}
-            self.col.find_one_and_replace(data_dict, rec)
+    def update_tag(self, rec):
+        table = self.tag
+        data_dict = {"tag_id": rec["tag_id"]}
+        data = {
+            "tag_id": rec["tag_id"],
+            "tag_name": rec["tag_name"],
+            "tag_url": rec["tag_url"],
+            "tag_code": rec["tag_code"],
+            "tag_description": rec["tag_description"]
+        }
+        row = table.find(data_dict).count()
+
+        if row:
+            table.find_one_and_replace(data_dict, data)
+        else:
+            table.insert_one(data)
+
+        return True
+
+    def update_gallery(self, rec):
+        table = self.gallery
+        data_dict = {"gallery_id": rec["gallery_id"]}
+        data = {
+            "gallery_id": rec["gallery_id"],
+            "gallery_name": rec["gallery_name"],
+            "gallery_path": rec["gallery_path"],
+            "gallery_description": rec["gallery_description"]
+        }
+        row = table.find(data_dict).count()
+
+        if row:
+            table.find_one_and_replace(data_dict, data)
+        else:
+            table.insert_one(data)
+
+        return True
 
     def get_json_data(self, file):
-        insert_list = []
-        update_list = []
-
         with open(file) as json_file:
             recs = json.load(json_file)
+
             if isinstance(recs, list):
                 for rec in recs:
-                    data_dict = {self.params: rec[self.params]}
-                    res = self.col.find(data_dict).count()
-                    if res:
-                        update_list.append(rec)
-                    else:
-                        insert_list.append(rec)
+                    if "article_id" in rec:
+                        self.update_article(rec)
 
-        return insert_list, update_list
+                    if "category_id" in rec:
+                        self.update_category(rec)
+
+                    if "sub_category_id" in rec:
+                        self.update_sub_category(rec)
+
+                    if "gallery_id" in rec:
+                        self.update_gallery(rec)
+
+                    if "galleries" in rec:
+                        for gallery in rec["galleries"]:
+                            self.update_gallery(gallery)
+
+                    if "tags" in rec:
+                        for tag in rec["tags"]:
+                            self.update_tag(tag)
+
+        return True
 
     def get_json_files(self):
         list_files = os.listdir(self.path)

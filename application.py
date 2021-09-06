@@ -149,23 +149,15 @@ def page_not_found(error):
 @app.cli.command('blog_update')
 def blog_update():
     path = app.config.get("IMPORT_PATH")
-    blog_code = app.config.get("BLOG_CODE")
+    file_suffix = "_{0}_blog.json".format(app.config.get("BLOG_CODE"))
 
-    article = app.config.get("MONGO_BLOG_TABLE")
-    category = app.config.get("MONGO_BLOG_TABLE")
-    sub_category = app.config.get("MONGO_BLOG_TABLE")
-    tag = app.config.get("MONGO_BLOG_TABLE")
+    article = data_collect(app.config.get("MONGO_ARTICLE_TABLE"))
+    category = data_collect(app.config.get("MONGO_CATEGORY_TABLE"))
+    sub_category = data_collect(app.config.get("MONGO_SUB_CATEGORY_TABLE"))
+    tag = data_collect(app.config.get("MONGO_TAG_TABLE"))
+    gallery = data_collect(app.config.get("MONGO_GALLERY_TABLE"))
 
-    models = {
-        "article": data_collect(article),
-        "category": app.config.get(category),
-        "sub_category": app.config.get(sub_category),
-        "tag": app.config.get(tag)
-    }
-
-    file_suffix = "_{0}_blog.json".format(blog_code)
-
-    bi = ArticleInsert(models, path, file_suffix)
+    bi = ArticleInsert(article, category, sub_category, tag, gallery, path, file_suffix)
     bi.trigger_import()
 
 
