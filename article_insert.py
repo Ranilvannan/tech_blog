@@ -18,8 +18,8 @@ class ArticleInsert:
 
         for file in files:
             self.get_json_data(file)
-            # if os.path.exists(file):
-            #     os.remove(file)
+            if os.path.exists(file):
+                os.remove(file)
 
     def update_article(self, rec):
         table = self.article
