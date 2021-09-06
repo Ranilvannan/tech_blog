@@ -1,0 +1,72 @@
+Konqueror
+
+Konqueror is a file manager and web browser for the KDE desktop. It provides the usual file manager functionality
+including display of files and directories using an icon view or tree view, copying, moving and deleting by direct
+drag and drop or by using copy, cut and paste, and file properties. Konqueror is a unified web browser, file manager,
+document viewer, and image viewer.
+
+
+Konqueror is highly configurable. There are multiple preconfigured profiles that allow you to select the mode of
+operation that provides a starting place for using Konqueror in the manner that suits you best. You can also create
+your own profiles. Konqueror is an amazingly versatile and powerful file management program that is also a very good
+web browser and FTP client. Konqueror allows you to browse through your files and directories to locate, copy, move,
+and delete files, as well as to open them using a pre-selected application, or an alternate application.
+
+<Images for konqueror>
+
+Konqueror Features:
+
+    Webbrowsing using KHTML or KDEWebKit as rendering engines
+    File management using most of Dolphin's features (including version-control, service menus and the basic UI)
+    File management on ftp and sftp servers
+    Full featured FTP-client (you can split views to display local and remote folders and previews in the same window)
+    Embedded applications to preview files (e.g. Okular and Calligra for documents, Gwenview for pictures, KTextEditor for text-files)
+    Different kinds of plugins: Service-menus, KParts (embedded applications), KIO (accessing files using special protocols like http or ftp) and KPart-plugins (like AdBlocker...)
+
+
+Managing Files and Folders
+
+Konqueror is a powerful file manager with one unique feature: It can preview most file types using a broad variety of
+KDE frameworks kpart viewers. It be used to view .pdf files, images, text files and a lot of other file types.
+A KDE file manager window consists of a menu bar, a navigation toolbar, a location field, a status bar,
+and a sidebar that provided different views of user resources such as a tree view of file and directory icons for
+your home directory. When you first display the file manager window, it displays the file and subdirectory icons
+for your home directory.
+
+When you first open Konqueror in file management mode, you can see two panes: on the right is the folder view;
+on the left is the sidebar. The folder view contains icons for each item inside the current folder. These items can
+be folders or files. Many file types can be “previewed” without opening a new application. Konqeruror supports split
+windows, tabs and a lot more. It is totally fine as a file manager. It is not as efficient as GNU Midnight
+Commander or plain cp/mv in a shell if you need to quickly move a lot of files around but it is very good if a GUI
+file manager is what you are looking for.
+
+You can open any item by clicking (just once – KDE does not use double-clicking in its default settings) on the
+icon for the file. Folders will be opened in the same window; files will either be opened in the appropriate program,
+or the file manager will ask you what program to use. For instance, if do not have a word-processor set up to open
+Microsoft Word documents, the file manager will ask you what to do.
+
+<Images for files and folders>
+
+Navigation Panel
+
+The navigation panel is a sidebar that lists different resources that a user can access with Konqueror. You can turn
+the navigation panel on or off by selecting its entry in the Windows menu. The sidebar is configured with the
+Navigation Panel Configuration tool, accessible as the first button on the Navigation panel's button bar.
+
+<Images for navigation panel>
+
+Web and FTP Access
+
+The KDE file manager also doubles as a Web browser and an FTP client. It includes a box for entering either a
+pathname for a local file or a URL for a Web page on the Internet or your intranet. A navigation toolbar can be
+used to display previous Web pages or previous directories. The Home button will always return you to your home
+directory. When accessing a Web page, the page is displayed as on any Web browser. With the navigation toolbar,
+you can move back and forth through the list of previously displayed pages in that session. The KDE file manager
+also operates as an FTP client.
+
+<Images for FTP>
+
+
+
+
+

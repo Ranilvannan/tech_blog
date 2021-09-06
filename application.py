@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template, abort, send_from_directory, make_response
-from blog_insert import BlogInsert
+from article_insert import ArticleInsert
 from flask_paginate import Pagination
 import pymongo
 import os
@@ -12,6 +12,11 @@ app.config.from_object('config.ProductionConfig')
 app.template_folder = app.config.get("TEMPLATE_FOLDER_PATH")
 PER_PAGE = 10
 START_DATE = "2021-01-01"
+
+
+@app.route('/konqueror')
+def konqueror():
+    return render_template('test/konqueror.html', active_page="home")
 
 
 def data_collect(table):
@@ -145,23 +150,23 @@ def page_not_found(error):
 def blog_update():
     path = app.config.get("IMPORT_PATH")
     blog_code = app.config.get("BLOG_CODE")
-    blog = app.config.get("MONGO_BLOG_TABLE")
-    col = data_collect(blog)
-    params = "blog_id"
+
+    article = app.config.get("MONGO_BLOG_TABLE")
+    category = app.config.get("MONGO_BLOG_TABLE")
+    sub_category = app.config.get("MONGO_BLOG_TABLE")
+    tag = app.config.get("MONGO_BLOG_TABLE")
+
+    models = {
+        "article": data_collect(article),
+        "category": app.config.get(category),
+        "sub_category": app.config.get(sub_category),
+        "tag": app.config.get(tag)
+    }
+
     file_suffix = "_{0}_blog.json".format(blog_code)
 
-    bi = BlogInsert(path, col, params, file_suffix)
+    bi = ArticleInsert(models, path, file_suffix)
     bi.trigger_import()
 
 
-@app.cli.command('gallery_update')
-def gallery_update():
-    path = app.config.get("IMPORT_PATH")
-    gallery = app.config.get("MONGO_GALLERY_TABLE")
-    col = data_collect(gallery)
-    params = "gallery_id"
-    file_suffix = "_gallery.json"
-
-    bi = BlogInsert(path, col, params, file_suffix)
-    bi.trigger_import()
 

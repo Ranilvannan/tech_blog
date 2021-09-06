@@ -1,0 +1,27 @@
+XFE File Manager
+
+XFE (X File Explorer) is a lightweight Windows File Explorer or Commander like file manager for Unix / Linux X.
+It’s small memory footprint, very fast, and only requires the FOX library to be fully functional, and aims to
+light desktop users and only requires the FOX library to be fully functional.
+
+<Image>
+
+XFE File Manager Features:
+
+Very fast graphic user interface
+Small memory footprint
+UTF-8 support (through the FOX 1.6 library)
+Integrated text editor (X File Write, xfw)
+Integrated text viewer (X File View, xfv)
+Integrated image viewer (X File Image, xfi)
+Integrated RPM or DEB packages viewer / installer / uninstaller (X File Package, xfp)
+Copy/cut/paste files from and to your favorite desktop (GNOME/KDE/XFCE/ROX)
+Drag and Drop in Xfe and from and to your favorite desktop.
+Root mode with authentication by su or sudo
+Color themes (GNOME, KDE, Windows, ...)
+Icon themes (Xfe, GNOME, KDE, XFCE, Tango, Windows...)
+Multilingual and available in 17 different language
+Create and extract archives (tar, compress, zip, gzip, bzip2, xz, lzh, rar, ace, arj and 7zip formats are supported)
+
+
+<Image>

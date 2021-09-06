@@ -1,0 +1,31 @@
+Polo File manager
+
+Polo is an Advanced file manager for the Linux desktop, which offers a number of features that you'll find in similar
+tools of it's kind, and some features you would not. Polo is a file manager that shows a great deal of promise,
+it could easily wind up as a default file manager on many a distribution. The one thing holding Polo back is its
+beta status and the lack of recent updates.
+
+It comes with multiple panes with multiple tabs in each pane, support
+for archive creation, extraction and browsing, support for cloud storage, support for running KVM images, support
+for modifying PDF documents and image files, support for writing ISO files to UDB drives and much more.
+
+<Image>
+
+
+Features of polo file manager
+
+    Multiple Panes – Supports three layouts: single-pane, dual-pane and quad-pane with tabs in each pane with an embedded terminal which can be changed with the F4 key.
+    Multiple Views – Support for multiple views: List view, Icon view, Tiled view, and Media view.
+    Device Manager – shows a list of connected devices with mount and unmount options with support for locking/unlocking LUKS encrypted devices.
+    Archive Support – Support for the creation of multiple archives formats with advanced compression settings.
+    PDF Actions – Split and Merge PDF pages, Add or Remove Password, Rotate, etc.
+    ISO Actions – Mount, Boot in Virtual Machine, Write to the USB drive.
+    Image Actions – Rotate, Resize, Reduce Quality, Optimize PNG, Convert to other formats, Boot or Reduce Colors, etc.
+    Checksum & Hashing – Generate MD5, SHA1, SHA2-256 ad SHA2-512 checksums for file and folders, and verify.
+    Document Viewer - Modify PDF documents and image files
+    File comparison
+    Multilingual and available in multiple language support.
+
+<Image>
+
+

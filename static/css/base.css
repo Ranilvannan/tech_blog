@@ -77,7 +77,7 @@ footer{
     background: #455A64;
 }
 
-p {
+p, li {
     color: #7f8fa6;
 }
 
@@ -102,6 +102,10 @@ p {
 
 .breadcrumb-item a {
     text-decoration: none !important;
+}
+
+.fs-50{
+    font-size: 40px;
 }
 
 

@@ -1,0 +1,35 @@
+PCManFM
+
+PCMan is the default file management tool (manager) that comes with the LXDE desktop. Since the LXDE desktop
+environment is designed to use as little resources as possible + it's well known for its speed, so as the PCMan.
+PCMan file manager is intended for those who don’t need much functionality, whether using an old machine or a modern
+PC, what you want is a lightweight, quick and responsive desktop. The goal of PCMan file manger is to fill the gap
+between lightweight and full-featured file managers, in order to build not a powerful, but a good enough file manager
+for your Linux desktop. PCManFM is the standard file manager in LXDE.
+
+Nautilus (Gnome's tool) and Thunar (Xfce file manager) are both a lot similar in characteristics, but if you're a
+bit new to LXDE, then think of PCMan as the simplest version of both Nautilus and Thunar. GUI and the look-n-feel as
+Nautilus and Thunar. PCMan comes with the interface of Firefox, Windows Explorer, and nautilus, trying to
+aggregate their useful parts. Furthermore, most hotkeys are compatible with Firefox, so users can get used to it
+easily. Files can be easily dragged to other tabs in the same window.
+
+
+<Images of pcmanfm>
+
+PCManFM features:
+
+    Full GVfs support with seamless access to remote file systems (able to handle sftp://, dav://, smb://, etc. when related back-ends of gvfs are installed.)
+    Twin panel
+    Customizable main window layout
+    Desktop management - shows wallpaper and desktop icons
+    Bookmarks - saved places. You can see them in the left panel of PCManFM. Visible from other Gtk+ applications.
+    Multilingual (translated in several languages)
+    Tabbed windows (similar to Firefox tabs)
+    Volume management (mount/unmount/eject, requires gvfs)
+    Drag & drop support
+    Files can be dragged among tabs
+    File association (Default application)
+    File system advanced search
+    Trash can support
+    Provides icon view, compact view, detailed list view and thumbnail view.
+    File templates support (both GNOME and KDE styles are supported) to simple creation of new files

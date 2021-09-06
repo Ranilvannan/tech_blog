@@ -1,0 +1,28 @@
+SpaceFM:
+
+SpaceFM is a multi-panel tabbed file and desktop manager for Linux with built-in VFS, udev- or HAL-based device
+manager, customisable menu system, and bash-GTK integration. SpaceFM aims to provide a stable, capable file manager
+with significant customisation capabilities. SpaceFM is a fork of the legacy PCMan File Manager.  It is a lightweight,
+highly configurable, desktop-independent file manager.
+
+PCManFM-Mod was later used as a base for developing SpaceFM, which included an extensible user interface, multiple
+panel support, a new udev device manager, inotify support, and removed dependencies on fam/gamin and HAL. Much of
+the internal virtual filesystem (VFS), which had been developed and debugged in legacy PCManFM and PCManFM-Mod, was
+retained and extended, providing SpaceFM with a reliable VFS to build upon.
+
+<Image>
+
+Features of SpaceFM:
+    Panels: each window can contain up to four, independently configured panels. Each of which are in turn complete file managers with their own tabbed directory content, tool/status bars, etc.[3]
+    Tabs: each panel supports multiple folder tabs
+    Configurable sidepanels: showing devices, bookmarks, directory tree.
+    Configurable drag&drop and clipboard functions
+    Video & image thumbnails
+    Bash integration (with in app tab completion)
+    Task Manager & Queue: ability background long running tasks and continue working
+    Built-in VFS, udev- or HAL-based device manager
+    Network support: mount nfs, ftp, smb, ssh and iso
+    Customizable menu system
+    Lightweight desktop management capabilities (icons, wallpaper)
+
+<Image>

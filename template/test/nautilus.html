@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="space-55"></div>
+            <div class="col-sm-2"></div>
+            <main class="col-sm-8">
+                <div class="p-3 bg-body rounded shadow-sm h100">
+                    <h2 class="pb-4 mb-4 fs-50">Nautilus</h2>
+                    <img class="mb-4" src="{{ url_for('static', filename='test/konqueror.png') }}" width="100%">
+                    <p>Konqueror is KDE's Webbrowser and swiss-army-knife for any kind of file-management and file previewing.</p>
+                    <p>Features:</p>
+                    <ul>
+                        <li>Webbrowsing using KHTML or KDEWebKit as rendering engines</li>
+                        <li>File management using most of Dolphin's features (including version-control, service menus and the basic UI)</li>
+                        <li>File management on ftp and sftp servers</li>
+                        <li>Full featured FTP-client (you can split views to display local and remote folders and previews in the same window)</li>
+                        <li>Embedded applications to preview files (e.g. Okular and Calligra for documents, Gwenview for pictures, KTextEditor for text-files)</li>
+                        <li>Different kinds of plugins: Service-menus, KParts (embedded applications), KIO (accessing files using special protocols like http or ftp) and KPart-plugins (like AdBlocker...)</li>
+                    </ul>
+                </div>
+            </main>
+            <div class="col-sm-2"></div>
+        </div>
+    </div>
+{% endblock %}

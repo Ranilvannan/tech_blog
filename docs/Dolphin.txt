@@ -1,0 +1,77 @@
+Dolphin
+
+Dolphin is KDE's file manager that lets you navigate and browse the contents of your hard drives, USB sticks, SD cards, and more. Creating, moving, or deleting files and folders is simple and fast.
+Dolphin will seem pretty similar to the Windows file explorer at first, but there are a few key differences. For instance, the main toolbar only has a few buttons and looks rather clean and simple.
+Dolphin has been the default file manager for the KDE desktop. Dolphin and other file management programs also allow you to organize your files by moving or deleting files and entire folders.
+
+
+Dolphin is very lightweight, but at the same time, you can adapt it to your specific needs. This means that you can carry out your file management exactly the way you want to.
+Dolphin also comes with an integrated terminal that allows you to run commands on the current folder. You can extend the capabilities of Dolphin even further with powerful plugins to adapt it to your workflow.  It is very powerful and provides some very advanced features. You can use the git integration plugin to interact with git repositories, or the Nextcloud plugin to synchronize your files online, and much more.
+Dolphin contains plenty of productivity features that will save you time. The multiple tabs and split view features allow navigating multiple folders at the same time, and you can easily drag and drop files between views to move or copy them.
+
+
+
+Dolphin Interface
+
+    Menu bar
+    Tool Bar
+    Location bar
+    Places Panel
+    Folders Panel
+    Information Panel
+    Filter Bar
+    Status bar
+    Workspace
+
+
+<Image with the interface>
+
+
+Dolphin file manager features
+	Breadcrumb navigation bar and each part of the link is clickable
+	Network transparency with features of FTP using KDE’s KIO slaves
+	Multiple tabs and split view features allow navigating multiple folders at the same time
+	Sorting and grouping of files by name, size, type and others
+	Easy cusomisation extend the capabilities of Dolphin even further with powerful plugins
+	Three view modes tree, list and detail view
+
+
+
+View Mode
+
+Dolphin features three different folder view modes:
+
+    Icons shows each file or folder as an icon with its name
+    Compact is the same as icons, but in a more compact form, allowing more folders and files to be displayed at once
+    Details presents a list of files and folders, giving information on each, including but not limited to size and date
+
+<Images with view mode>
+
+
+
+Managing Files and Folders
+
+To perform actions like copying, moving, creating or deleting files, you need appropriate permissions to the folders and files involved in your action.
+Copying, Moving, or Delete Files or Folders
+    In order to select one or multiple files and folders in Dolphin, move your mouse pointer over the file or folder but do not click. A green cross appears on the upper-left edge. To select the file or folder now, click the green cross icon. Alternatively, press Ctrl and click the file or files. To deselect again, click the red minus icon that appears if the object is currently selected.
+    Right-click and select Copy or Cut from the context menu.
+    Navigate to the destination folder in which to insert the object.
+    To create a new folder at the current location, select File > Create New > Folder or press F10. Enter a folder name in the new window and press Enter.
+    To insert the object you copied or cut in Step 2, "," (↑ KDE Quick start ), right-click the destination folder in the main display field and select Paste. The object is copied or moved there.
+    To delete a file or folder, right-click the object in the main display field and select Move to Trash from the context menu. The object is moved to the trash bin. From there, you can restore it if necessary or delete the object irretrievably.
+    To quickly filter for certain filenames in the current directory, press Ctrl+I or select Tools > Show Filter Bar to add the Filter input field to the bottom of the Dolphin main window. Type any part of the filename you are searching for to see all files in the current directory containing the search string. For more detailed and advanced searches, press Ctrl+F to use KFind.
+
+
+Configuring Dolphin
+
+Dolphin is highly flexible and can be configured to meet almost any needs pertaining to filesystem navigation and file management. The major aspects of configuring Dolphin include the icons on the Toolbar, the tools available in the user interface (UI), and how Dolphin acts in certain specific circumstances. Dolphin offers many options to adjust the view and the overall settings according to your needs and wishes.
+
+
+    To toggle between the bread crumb view and the editable version of the location bar, press Ctrl+L or click at the far right end of the location bar. Enter a path to a directory by typing it in. After typing an address, press Enter.
+    To change the view of the currently displayed folder, either click Icons, Details, or Columns in the toolbar. Dolphin remembers the selected view for each folder. Alternatively, press Ctrl+1, Ctrl+2, or Ctrl+3 to switch between the view modes. Click Split or press F3 to view the contents of the current folder in two separate columns. Now you can navigate to a different directory in each column and easily drag or drop objects or compare the contents of directories.
+    To make Dolphin also show hidden files, select View > Show Hidden Files or press Alt++.
+	To view more details about the files (like access permissions or ownership), select View > Additional Information and enable the respective options.
+	To add further directories to the Places panel, drag a folder from the working space to the Places panel and drop it there. Right-click and use the context menu to hide, edit or remove entries from Places.
+
+
+<image for configuration>

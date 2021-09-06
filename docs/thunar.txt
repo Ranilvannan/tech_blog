@@ -1,0 +1,59 @@
+Thunar File Manager
+
+Thunar is a modern file manager for the Xfce Desktop Environment. Thunar has been designed from the ground up to be
+fast and easy to use. Its user interface is clean and intuitive and does not include any confusing or useless options
+by default. Thunar starts up quickly and navigating through files and folders is fast and responsive. Thunar is a
+file manager for Linux and other Unix-like systems, initially written using the GTK+ 2 toolkit and later
+ported to the GTK+ 3 toolkit.
+
+Thunar is designed to start up faster and be more responsive than some other Linux file managers, such as
+Nautilus and Konqueror. Thunar is simple and lightweight by design, but its functionality can be extended
+through plugins. Thunar supports automatic mounting and unmounting of removable media is an added advantages makes
+easy handling of removable items.
+
+<Image of thunar file manager>
+
+File Manager Window:
+
+The file manager window consists of a Side Pane on the left, the Main Area on the right and a Location
+Selector above the main area.
+    Side Pane
+    Main Area
+    Location Selector
+
+Side Pane:
+
+The Side Pane is organized into three categories of objects: Devices, Places and Network.
+
+In the Devices section, you will find fixed disk partitions as well as removable media listed. At a minimum,
+on a simple system with a single disk and operating system, you will just see the File System listed. Clicking on
+this item will take you to the root of your file system and display the entire folder hierarchy. If you are new to
+Linux, this structure may be confusing. You can learn more about it in The UNIX File System section.
+
+The Places section provides a location for storing shortcuts to the various file folders on your system. The three
+shortcuts shown in the figure above are there by default and they can not be removed or rearranged. The first
+shortcut will lead to your Home Folder, the folder where you store all your personal data, and will therefore have
+the name of the current user.
+
+In the Network section, you will see a single Browse Network icon. Clicking this icon will allow you to connect
+to a server or network share to browse and view files on that server. The file manager will find any computers
+on your local area network that advertise their ability to serve files.
+
+<Image of side pane>
+
+Main Area:
+
+The Main Area will always display the contents of the current folder. Double-click on folders to enter them and
+right-click on files or folders to bring up a context menu offering additional options for them. Select multiple
+files or folders by using the standard Shift-click or Ctrl-click method (for contiguous and non-contiguous items
+respectively). An alternate method for selecting contiguous items is to drag a rectangle over them with the mouse.
+
+<Image of main area>
+
+Location Selector:
+
+The Location Selector shows the path to the current folder starting from the root directory (or the URL in the case
+of a network share). The path can be displayed in either a Pathbar or Toolbar style by clicking View → Location
+Selector from the menu.
+
+<Image of location selector>

@@ -1,0 +1,49 @@
+Deepin file manager:
+
+Deepin File Manager is a powerful & easy-to-use file managing tool developed by Deepin Technology. It follows the
+functions and layout of the classic file manager, simplifies user operation on that basis, and added many distinctive
+features. With the easy-access navigation bar, diversified view and sorting, you will be managing with high
+proficiency. Full-featured, well-designed, efficient-improved, Deepin File Manager will be a good help in
+your daily life and work.
+
+<Image deepin file manager>
+
+Features of Deepin File manager:
+
+    Display your files and folders.
+    Manage your files and folders.
+    Customize your files and folders.
+    File management on ftp and sftp servers
+    Full featured FTP-client (you can split views to display local and remote folders and previews in the same window)
+    Managing multiple tabs
+    Managing Bookmarks
+
+
+
+Managing Files and Folders
+
+Deepin File Manager interface to switch between icon display and list display.
+
+    Icon display: It will show the icon, name and thumbnail of the files.
+    List display：It will show the icon, name, modified time, size and type of the files.
+
+<Image>
+
+Manage Tabs
+
+Deepin File Manager supports multi-tab view.
+
+    In Deepin File Manager, right click on the folder to open in new tab.
+    In the popup context menu, select Open in new tab .
+    When the window has multi-tabs, user can:
+        Click on + in tab bar to add a new tab.
+        Click on × on the right tab of the tab bar to close an existing tab.
+
+<Image>
+
+Manage Bookmarks
+User can add folders to bookmarks in Deepin File Manager.
+
+    In Deepin File Manager, right-click on the folder to add as bookmark.
+    In the popup context menu, select Add to bookmark.
+

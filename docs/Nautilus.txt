@@ -1,0 +1,74 @@
+Nautilus File manager
+
+GNOME Files, formerly and internally known as Nautilus, is the official file manager for the GNOME desktop.
+Nautilus is a GUI-based file manager that provides a simple and integrated way to manage your files and applications.
+Nautilus is always running while you are using GNOME. The file manager lets you organize your files into folders.
+Folders can contain files and may also contain other folders. Using folders can help you find your files more easily.
+
+GNOME Files relies on a file system abstraction layer (provided by GVfs) to browse local and remote file systems,
+including but not limited to FTP sites, Windows SMB shares, OBEX protocol (often implemented on cellphones),
+files transferred over shell protocol, HTTP and WebDAV and SFTP servers. Nautilus can display previews of files
+in their icons, be they text files, images, sound or video files via thumbnailers such as Totem. Audio files are
+previewed (played back over GStreamer) when the pointer is hovering over them.
+
+<Image nautilus file manager>
+
+Features of Nautilus File manager:
+
+Display your files and folders.
+Manage your files and folders.
+Customize your files and folders.
+Search and manage your files
+Customize the appearance of files and folders
+Run scripts and launch applications
+
+
+Nautilus File manager modes:
+
+Spatial mode is the default in GNOME, but your distributor, vendor, or system administrator may have configured
+Nautilus to use browser mode by default.
+
+Browser mode: browse your files and folders
+The file manager window represents a browser, which can display any location. Opening a folder updates the current
+file manager window to show the contents of the new folder.
+
+<Image browser mode>
+
+Spatial mode: navigate your files and folders as objects
+The file manager window represents a particular folder. Opening a folder opens the new window for that folder.
+Each time you open a particular folder, you will find its window displayed in the same place on the screen and the same size as the last time you viewed it (this is the reason for the name 'spatial mode').
+
+<Image spatial mode>
+
+Managing Your Files and Folders:
+
+The file manager includes views that enable you to show the contents of your folders in different ways,
+icon view, and list view.
+
+Icon View: Shows the items in the folder as icons.
+List view: Shows the items in the folder as a list.
+
+<Image of icon view>
+<Image of list view>
+
+Manage your files and folders includes the following features
+
+1. Drag-and-Drop in Nautilus: When you drag-and-drop, the mouse pointer provides feedback about the task that you perform
+2. Select Files and Folders: Selection may be in single item or group or multiple items
+3. Duplication and renaming of files and folders
+
+
+<Image for drag and drop>
+
+
+
+
+
+
+
+
+
+
+
+
+
