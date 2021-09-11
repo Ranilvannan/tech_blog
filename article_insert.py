@@ -36,7 +36,7 @@ class ArticleInsert:
             "preview": rec["preview"],
             "content": rec["content"],
             "category_url": rec["category_url"],
-            "sub_category_url": rec["sub_category_url"],
+            "category_name": rec["category_name"],
             "previous": rec["previous"],
             "next": rec["next"],
             "related_ids": rec["related_ids"],
@@ -59,25 +59,6 @@ class ArticleInsert:
             "url": rec["category_url"],
             "code": rec["category_code"],
             "description": rec["category_description"]
-        }
-        row = table.find(data_dict).count()
-
-        if row:
-            table.find_one_and_replace(data_dict, data)
-        else:
-            table.insert_one(data)
-
-        return True
-
-    def update_sub_category(self, rec):
-        table = self.sub_category
-        data_dict = {"sub_category_id": rec["sub_category_id"]}
-        data = {
-            "sub_category_id": rec["sub_category_id"],
-            "name": rec["sub_category_name"],
-            "url": rec["sub_category_url"],
-            "code": rec["sub_category_code"],
-            "description": rec["sub_category_description"]
         }
         row = table.find(data_dict).count()
 
@@ -136,9 +117,6 @@ class ArticleInsert:
 
                     if "category_id" in rec:
                         self.update_category(rec)
-
-                    if "sub_category_id" in rec:
-                        self.update_sub_category(rec)
 
                     if "gallery_id" in rec:
                         self.update_gallery(rec)

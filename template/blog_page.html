@@ -21,7 +21,7 @@
                     <h2>{{article.title}}</h2>
                     <p class="small">
                         <b class="text-primary pr-2">Published On</b>
-                        <i class="blog-info">{{ article.published_on }}</i>
+                        <i class="blog-info">{{ article.published_on.strftime('%Y-%m-%d') }}</i>
                         <strong>|</strong>
                         <b class="text-primary pr-2">Category</b>
                         <a class="blog-info blog-link" href="{{ url_for('category_page', category_url=article.category_url) }}">{{ article.category_name }}</a>
@@ -31,9 +31,7 @@
                     <img src="{{ url_for('custom_images', filename=article.image_filename) }}" width="100%">
                 {% endif %}
                 <div class="story-content pt-2">
-                    {% for rec in article.content_ids %}
-			            <p>{{ rec }}</p>
-			        {% endfor %}
+                    {{ article.content }}
                 </div>
             </div>
 		</div>
