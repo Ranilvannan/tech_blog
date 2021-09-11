@@ -1,5 +1,6 @@
 import os
 import json
+from datetime import datetime
 
 
 class ArticleInsert:
@@ -18,22 +19,24 @@ class ArticleInsert:
 
         for file in files:
             self.get_json_data(file)
-            if os.path.exists(file):
-                os.remove(file)
+            # if os.path.exists(file):
+            #     os.remove(file)
 
     def update_article(self, rec):
         table = self.article
         data_dict = {"article_id": rec["article_id"]}
         data = {
             "article_id": rec["article_id"],
-            "date": rec["date"],
-            "published_on": rec["published_on"],
+            "date": datetime.strptime(rec["date"], "%Y-%m-%d"),
+            "published_on": datetime.strptime(rec["published_on"], "%Y-%m-%d %H:%M:%S"),
             "blog_type": rec["blog_type"],
             "name": rec["name"],
             "url": rec["url"],
             "title": rec["title"],
             "preview": rec["preview"],
             "content": rec["content"],
+            "category_url": rec["category_url"],
+            "sub_category_url": rec["sub_category_url"],
             "previous": rec["previous"],
             "next": rec["next"],
             "related_ids": rec["related_ids"],

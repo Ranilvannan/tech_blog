@@ -78,14 +78,14 @@ def category_page(category_url, sub_category_url=None):
 
     category_obj = category_data[category_url]
     record = category_obj
-    sub_category = None
+    sub_category_obj = None
     page = request.args.get("page", type=int, default=1)
 
-    data_dict = {"blog_code": app.config['BLOG_CODE'],
+    data_dict = {"blog_type": app.config['BLOG_TYPE'],
                  "category_url": category_url,
                  "date": {
-                     "$gte": START_DATE,
-                     "$lt": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                     "$gte": datetime.strptime(START_DATE, "%Y-%m-%d"),
+                     "$lt": datetime.now()
                  }}
 
     if sub_category_url:
@@ -117,7 +117,7 @@ def category_page(category_url, sub_category_url=None):
 @app.route('/category/<category_url>/<blog_url>/')
 @app.route('/category/<category_url>/<blog_url>')
 def blog_page(category_url, blog_url):
-    blog = app.config.get("MONGO_BLOG_TABLE")
+    blog = app.config.get("MONGO_ARTICLE_TABLE")
     blog_col = data_collect(blog)
     article = blog_col.find_one({"url": blog_url})
 
@@ -137,7 +137,7 @@ def sitemap_page():
                          "lastmod": datetime.now().strftime("%Y-%m-%d")})
 
     # Dynamic routes - Blog
-    blog = app.config.get("MONGO_BLOG_TABLE")
+    blog = app.config.get("MONGO_ARTICLE_TABLE")
     blog_col = data_collect(blog)
     data_dict = {"blog_code": app.config['BLOG_CODE'],
                  "date": {
@@ -181,7 +181,7 @@ def page_not_found(error):
 @app.cli.command('blog_update')
 def blog_update():
     path = app.config.get("IMPORT_PATH")
-    file_suffix = "_{0}_blog.json".format(app.config.get("BLOG_CODE"))
+    file_suffix = "_{0}_blog.json".format(app.config.get("BLOG_TYPE"))
 
     article = data_collect(app.config.get("MONGO_ARTICLE_TABLE"))
     category = data_collect(app.config.get("MONGO_CATEGORY_TABLE"))

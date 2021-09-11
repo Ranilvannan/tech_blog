@@ -12,10 +12,10 @@
 			<nav aria-label="breadcrumb">
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="/">Home</a></li>
-					{% if not sub_category %}
+					{% if not sub_category_obj %}
 						<li class="breadcrumb-item active" aria-current="page">{{ category_obj.name }}</li>
 					{% else %}
-						<li class="breadcrumb-item" aria-current="page"><a href="/{{category_obj.url}}">{{ category_obj.name }}</a></li>
+						<li class="breadcrumb-item" aria-current="page"><a href="{{ url_for('category_page', category_url=category_obj.url) }}">{{ category_obj.name }}</a></li>
 						<li class="breadcrumb-item" aria-current="page">{{ sub_category_obj.name }}</li>
 					{% endif %}
 				</ol>

@@ -3,7 +3,7 @@ from datetime import datetime
 
 myclient = pymongo.MongoClient("mongodb://localhost:27017/")
 mydb = myclient["tech_blog"]
-mycol = mydb["blog"]
+mycol = mydb["article"]
 
 article = {
     "category_url": "blog",
@@ -18,15 +18,16 @@ article = {
 }
 
 
-x = mycol.insert_one(article)
+# x = mycol.insert_one(article)
 
 
-# data_dict = {"blog_code": "tech_blog",
-#              "category_url": "blog",
-#              "date": {
-#                  "$gte": "2021-01-01",
-#                  "$lt": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-#                  }}
-# total_story = mycol.find(data_dict).count(True)
-#
-# print(total_story)
+data_dict = {"blog_type": "TECH",
+             "category_url": "category_1",
+             "date": {
+                 "$gte": "2021-01-01",
+                 "$lt": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                 }}
+
+total_story = mycol.find(data_dict).count(True)
+
+print(total_story)
