@@ -79,11 +79,9 @@ def category_page(category_url):
 @app.route('/tags/')
 @app.route('/tags')
 def all_tag_page():
-    # <button type="button" class="btn btn-outline-primary">Primary</button>
     tag_col = data_collect(app.config.get("MONGO_TAG_TABLE"))
     tag_obj = tag_col.find()
-    return render_template('all_tag_page.html',
-                           tag_obj=tag_obj)
+    return render_template('all_tag_page.html', tag_obj=tag_obj)
 
 
 @app.route('/tags/<tag_url>/')

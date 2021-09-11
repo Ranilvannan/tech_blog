@@ -9,6 +9,13 @@
 	<div class="row">
 		<div class="col-sm-1"></div>
 		<div class="col-sm-10 article mb-3">
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="/">Home</a></li>
+					<li class="breadcrumb-item"><a href="{{ url_for('all_tag_page') }}">tags</a></li>
+					<li class="breadcrumb-item active" aria-current="page">{{ tag_obj.name }}</li>
+				</ol>
+			</nav>
 			{% for article in articles %}
 			<article class="row p-3 blog-sp" onclick="location.href='{{ url_for('article_page', category_url=article.category_url, article_url=article.url) }}'">
 			  	<div class="col-xs-6 col-md-4">
