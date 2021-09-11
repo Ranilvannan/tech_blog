@@ -12,7 +12,7 @@
             <nav aria-label="breadcrumb">
 				<ol class="breadcrumb p-2">
 					<li class="breadcrumb-item"><a href="/">Home</a></li>
-					<li class="breadcrumb-item active"><a href="{{ url_for('category_page', category_url=article.category_url) }}">{{ category.name }}</a></li>
+					<li class="breadcrumb-item active"><a href="{{ url_for('category_page', category_url=article.category_url) }}">{{ article.category_name }}</a></li>
 					<li class="breadcrumb-item active" aria-current="page">{{article.title}}</li>
 				</ol>
 			</nav>

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
-{% block title %}{{ record.name }}{% endblock %}
-{% block description %}{{ record.description }}{% endblock %}
+{% block title %}{{ category_obj.name }}{% endblock %}
+{% block description %}{{ category_obj.description }}{% endblock %}
 
 
 {% block body %}
@@ -12,16 +12,11 @@
 			<nav aria-label="breadcrumb">
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="/">Home</a></li>
-					{% if not sub_category_obj %}
-						<li class="breadcrumb-item active" aria-current="page">{{ category_obj.name }}</li>
-					{% else %}
-						<li class="breadcrumb-item" aria-current="page"><a href="{{ url_for('category_page', category_url=category_obj.url) }}">{{ category_obj.name }}</a></li>
-						<li class="breadcrumb-item" aria-current="page">{{ sub_category_obj.name }}</li>
-					{% endif %}
+					<li class="breadcrumb-item active" aria-current="page">{{ category_obj.name }}</li>
 				</ol>
 			</nav>
 			{% for article in articles %}
-			<article class="row p-3 blog-sp" onclick="location.href='{{ url_for('blog_page', category_url=article.category_url, blog_url=article.url) }}'">
+			<article class="row p-3 blog-sp" onclick="location.href='{{ url_for('article_page', category_url=article.category_url, article_url=article.url) }}'">
 			  	<div class="col-xs-6 col-md-4">
 					<img src="{{ url_for('static', filename='img/digital_building.jpg') }}" width="100%">
 				</div>
