@@ -85,7 +85,7 @@ def article_page(category_url, article_url):
 
     if not article:
         abort(404)
-    print(article)
+
     return render_template('blog_page.html', article=article)
 
 
