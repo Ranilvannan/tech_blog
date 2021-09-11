@@ -112,4 +112,12 @@ p, li {
     min-height: 900px;
 }
 
+.blog-info {
+    padding-left: 12px;
+}
+
+.blog-link {
+    text-decoration: none;
+}
+
 

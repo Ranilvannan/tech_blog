@@ -8,29 +8,29 @@
 <div class="container">
 	<div class="row">
         <div class="col-sm-1"></div>
-		<div class="col-sm-9 article pt-1">
+		<div class="col-sm-9 article py-4 px-2">
             <nav aria-label="breadcrumb">
-				<ol class="breadcrumb p-2">
+				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="/">Home</a></li>
 					<li class="breadcrumb-item active"><a href="{{ url_for('category_page', category_url=article.category_url) }}">{{ article.category_name }}</a></li>
 					<li class="breadcrumb-item active" aria-current="page">{{article.title}}</li>
 				</ol>
 			</nav>
 			<div class="story">
-                <div class="story-title p-2">
+                <div class="story-title py-3">
                     <h2>{{article.title}}</h2>
                     <p class="small">
                         <b class="text-primary pr-2">Published On</b>
-                        <i class="blog-info">{{ article.published_on.strftime('%Y-%m-%d') }}</i>
+                        <i class="px-2">{{ article.published_on.strftime('%Y-%m-%d') }}</i>
                         <strong>|</strong>
-                        <b class="text-primary pr-2">Category</b>
-                        <a class="blog-info blog-link" href="{{ url_for('category_page', category_url=article.category_url) }}">{{ article.category_name }}</a>
+                        <b class="text-primary pr-2 px-2">Category</b>
+                        <a class="blog-link px-2" href="{{ url_for('category_page', category_url=article.category_url) }}">{{ article.category_name }}</a>
                     </p>
                 </div>
                 {% if article.image_filename %}
                     <img src="{{ url_for('custom_images', filename=article.image_filename) }}" width="100%">
                 {% endif %}
-                <div class="story-content pt-2">
+                <div class="story-content py-2">
                     {{ article.content }}
                 </div>
             </div>
