@@ -1,6 +1,6 @@
 {% extends "base.html" %}
-{% block title %}{{ category.name }}{% endblock %}
-{% block description %}{{ category.description }}{% endblock %}
+{% block title %}{{ record.name }}{% endblock %}
+{% block description %}{{ record.description }}{% endblock %}
 
 
 {% block body %}
@@ -12,7 +12,12 @@
 			<nav aria-label="breadcrumb">
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="/">Home</a></li>
-					<li class="breadcrumb-item active" aria-current="page">{{ category.name }}</li>
+					{% if not sub_category %}
+						<li class="breadcrumb-item active" aria-current="page">{{ category_obj.name }}</li>
+					{% else %}
+						<li class="breadcrumb-item" aria-current="page"><a href="/{{category_obj.url}}">{{ category_obj.name }}</a></li>
+						<li class="breadcrumb-item" aria-current="page">{{ sub_category_obj.name }}</li>
+					{% endif %}
 				</ol>
 			</nav>
 			{% for article in articles %}

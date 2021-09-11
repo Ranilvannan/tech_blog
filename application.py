@@ -14,11 +14,6 @@ PER_PAGE = 10
 START_DATE = "2021-01-01"
 
 
-@app.route('/konqueror')
-def konqueror():
-    return render_template('test/konqueror.html', active_page="home")
-
-
 def data_collect(table):
     uri = app.config.get("MONGO_URI")
     database = app.config.get("MONGO_DATABASE")
@@ -46,15 +41,44 @@ def home_page():
     return render_template('home_page.html', active_page="home")
 
 
+def get_articles(params, page):
+    obj = data_collect(app.config.get("MONGO_ARTICLE_TABLE"))
+    total = obj.find(params).count(True)
+    pagination = Pagination(page=page, total=total, search=False, record_name='users', css_framework='bootstrap4')
+
+    # No Blog found
+    if not (1 <= page <= pagination.total_pages):
+        return render_template('no_result.html')
+
+    articles = obj.find(params) \
+        .sort("blog_id", -1) \
+        .skip(PER_PAGE*(page-1)) \
+        .limit(PER_PAGE)
+
+    return {"articles": articles, "pagination": pagination}
+
+
+def get_sub_category(params):
+    obj = data_collect(app.config.get("MONGO_SUB_CATEGORY_TABLE"))
+    sub_category = obj.find_one(params)
+
+    if not sub_category:
+        abort(404)
+
+    return sub_category
+
+
 @app.route('/category/<category_url>/')
 @app.route('/category/<category_url>')
-def category_page(category_url):
+@app.route('/category/<category_url>/<sub_category_url>/')
+@app.route('/category/<category_url>/<sub_category_url>')
+def category_page(category_url, sub_category_url=None):
     if category_url not in category_data.keys():
         return abort(404)
 
-    category = category_data[category_url]
-    blog = app.config.get("MONGO_BLOG_TABLE")
-    blog_col = data_collect(blog)
+    category_obj = category_data[category_url]
+    record = category_obj
+    sub_category = None
     page = request.args.get("page", type=int, default=1)
 
     data_dict = {"blog_code": app.config['BLOG_CODE'],
@@ -63,22 +87,30 @@ def category_page(category_url):
                      "$gte": START_DATE,
                      "$lt": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                  }}
-    total_story = blog_col.find(data_dict).count(True)
-    pagination = Pagination(page=page, total=total_story, search=False, record_name='users', css_framework='bootstrap4')
 
-    # No Blog found
+    if sub_category_url:
+        data_dict.update({"sub_category_url": sub_category_url})
+        sub_category_obj = get_sub_category({"url": sub_category_url})
+        record = sub_category_obj
+
+    obj = data_collect(app.config.get("MONGO_ARTICLE_TABLE"))
+    total = obj.find(data_dict).count(True)
+    pagination = Pagination(page=page, total=total, search=False, record_name='users', css_framework='bootstrap4')
+
+    # No Articles found
     if not (1 <= page <= pagination.total_pages):
         return render_template('no_result.html')
 
-    articles = blog_col.find(data_dict)\
-        .sort("blog_id", -1)\
-        .skip(PER_PAGE*(page-1))\
+    articles = obj.find(data_dict) \
+        .sort("blog_id", -1) \
+        .skip(PER_PAGE*(page-1)) \
         .limit(PER_PAGE)
 
     return render_template('category_page.html',
+                           category_obj=category_obj,
+                           sub_category_obj=sub_category_obj,
+                           record=record,
                            articles=articles,
-                           category=category,
-                           active_page=category_url,
                            pagination=pagination)
 
 
