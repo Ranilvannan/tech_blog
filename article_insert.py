@@ -40,6 +40,7 @@ class ArticleInsert:
             "previous": rec["previous"],
             "next": rec["next"],
             "related_ids": rec["related_ids"],
+            "tags": rec["tags"]
         }
         row = table.find(data_dict).count()
 
@@ -74,10 +75,10 @@ class ArticleInsert:
         data_dict = {"tag_id": rec["tag_id"]}
         data = {
             "tag_id": rec["tag_id"],
-            "tag_name": rec["tag_name"],
-            "tag_url": rec["tag_url"],
-            "tag_code": rec["tag_code"],
-            "tag_description": rec["tag_description"]
+            "name": rec["tag_name"],
+            "url": rec["tag_url"],
+            "code": rec["tag_code"],
+            "description": rec["tag_description"]
         }
         row = table.find(data_dict).count()
 
@@ -93,9 +94,9 @@ class ArticleInsert:
         data_dict = {"gallery_id": rec["gallery_id"]}
         data = {
             "gallery_id": rec["gallery_id"],
-            "gallery_name": rec["gallery_name"],
-            "gallery_path": rec["gallery_path"],
-            "gallery_description": rec["gallery_description"]
+            "name": rec["gallery_name"],
+            "path": rec["gallery_path"],
+            "description": rec["gallery_description"]
         }
         row = table.find(data_dict).count()
 

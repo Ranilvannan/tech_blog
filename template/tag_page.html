@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}{{ tag_obj.name }}{% endblock %}
+{% block description %}{{ tag_obj.description }}{% endblock %}
+
+
+{% block body %}
+<div class="space-18"></div>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-1"></div>
+		<div class="col-sm-10 article mb-3">
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="/">Home</a></li>
+					<li class="breadcrumb-item"><a href="{{ url_for('all_tag_page') }}">tags</a></li>
+					<li class="breadcrumb-item active" aria-current="page">{{ tag_obj.name }}</li>
+				</ol>
+			</nav>
+			{% for article in articles %}
+			<article class="row p-3 blog-sp" onclick="location.href='{{ url_for('article_page', category_url=article.category_url, article_url=article.url) }}'">
+			  	<div class="col-xs-6 col-md-4">
+					<img src="{{ url_for('static', filename='img/digital_building.jpg') }}" width="100%">
+				</div>
+				<div class="col-xs-12 col-md-8">
+					<h2 class="blog-post-title p-2">{{ article.title }}</h2>
+					<p class="blog-post-preview p-2">{{ article.preview }}</p>
+					<div class="blog-post-status p-2">
+						<div class="text-muted small">
+							<b>Published On</b>
+							<i class="ms-2">{{ article.published_on }}</i>
+						</div>
+					</div>
+				</div>
+			</article>
+			{% endfor %}
+			<div class="clearfix my-4">
+				{{ pagination.links }}
+			</div>
+		</div>
+		<div class="col-sm-1"></div>
+	</div>
+</div>
+
+{% endblock %}

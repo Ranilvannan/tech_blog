@@ -76,6 +76,48 @@ def category_page(category_url):
                            pagination=pagination)
 
 
+@app.route('/tags/')
+@app.route('/tags')
+def all_tag_page():
+    pass
+
+
+@app.route('/tags/<tag_url>/')
+@app.route('/tags/<tag_url>')
+def tags_page(tag_url):
+    # Tag details
+    tag_col = data_collect(app.config.get("MONGO_TAG_TABLE"))
+    tag_obj = tag_col.find_one({"url": tag_url})
+
+    if not tag_obj:
+        return abort(404)
+
+    obj = data_collect(app.config.get("MONGO_ARTICLE_TABLE"))
+    page = request.args.get("page", type=int, default=1)
+    data_dict = {"blog_type": app.config['BLOG_TYPE'],
+                 "tags.tag_url": tag_url,
+                 "published_on": {
+                     "$gte": datetime.strptime(START_DATE, "%Y-%m-%d"),
+                     "$lt": datetime.now()
+                 }}
+    total = obj.find(data_dict).count(True)
+    pagination = Pagination(page=page, total=total, search=False, record_name='users', css_framework='bootstrap4')
+
+    # No Articles found
+    if not (1 <= page <= pagination.total_pages):
+        return render_template('no_result.html')
+
+    articles = obj.find(data_dict) \
+        .sort("blog_id", -1) \
+        .skip(PER_PAGE*(page-1)) \
+        .limit(PER_PAGE)
+
+    return render_template('tag_page.html',
+                           tag_obj=tag_obj,
+                           articles=articles,
+                           pagination=pagination)
+
+
 @app.route('/category/<category_url>/<article_url>/')
 @app.route('/category/<category_url>/<article_url>')
 def article_page(category_url, article_url):
