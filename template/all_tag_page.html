@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}{{ tag_obj.name }}{% endblock %}
+{% block description %}{{ tag_obj.description }}{% endblock %}
+
+
+{% block body %}
+<div class="space-18"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10 article mb-3">
+            <h1 class="py-4">Tags</h1>
+            {% for tag in tag_obj %}
+            <a class="btn btn-outline-primary" href="{{ url_for('tags_page', tag_url=tag.url) }}" role="button">{{ tag.name }}</a>
+            {% endfor %}
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+</div>
+
+{% endblock %}
